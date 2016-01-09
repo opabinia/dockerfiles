@@ -1,4 +1,4 @@
-FROM itzg/ubuntu-openjdk-7
+FROM andreptb/oracle-java:latest
 
 MAINTAINER itzg
 
