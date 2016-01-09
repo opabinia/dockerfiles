@@ -41,6 +41,6 @@ ENV JVM_OPTS -Xmx1024M -Xms1024M \
   -XX:+UnlockCommercialFeatures \
   -XX:+FlightRecorder \
   -XX:StartFlightRecording=defaultrecording=true \
-  -XX:FlightRecorderOptions=disk=true,maxage=60m,dumponexit=true,dumponexitpath=/data/prof.jfr,settings=profile-minecraft
+  -XX:FlightRecorderOptions=disk=true,maxage=60m,dumponexit=true,dumponexitpath=/data/prof.jfr,settings=profile-minecraft.jfc
 ENV TYPE=VANILLA VERSION=LATEST FORGEVERSION=RECOMMENDED LEVEL=world PVP=true DIFFICULTY=easy \
   LEVEL_TYPE=DEFAULT GENERATOR_SETTINGS= WORLD= MODPACK=
