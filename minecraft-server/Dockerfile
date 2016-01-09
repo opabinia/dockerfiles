@@ -1,4 +1,4 @@
-FROM andreptb/oracle-java:latest
+FROM nimmis/java:oracle-8-jdk
 
 MAINTAINER itzg
 
