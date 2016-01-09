@@ -27,7 +27,7 @@ VOLUME ["/mods"]
 VOLUME ["/config"]
 VOLUME ["/plugins"]
 COPY server.properties /tmp/server.properties
-COPY profile-minecraft.jfc /tmp/profile-minecraft.jfc
+COPY profile-minecraft.jfc /usr/lib/jvm/java-8-oracle/lib/jfr/profile-minecraft.jfc
 WORKDIR /data
 
 CMD [ "/start" ]
@@ -41,6 +41,6 @@ ENV JVM_OPTS -Xmx1024M -Xms1024M \
   -XX:+UnlockCommercialFeatures \
   -XX:+FlightRecorder \
   -XX:StartFlightRecording=defaultrecording=true \
-  -XX:FlightRecorderOptions=disk=true,maxage=60m,dumponexit=true,dumponexitpath=/data/prof.jfr,settings=/tmp/profile-minecraft
+  -XX:FlightRecorderOptions=disk=true,maxage=60m,dumponexit=true,dumponexitpath=/data/prof.jfr,settings=profile-minecraft
 ENV TYPE=VANILLA VERSION=LATEST FORGEVERSION=RECOMMENDED LEVEL=world PVP=true DIFFICULTY=easy \
   LEVEL_TYPE=DEFAULT GENERATOR_SETTINGS= WORLD= MODPACK=
