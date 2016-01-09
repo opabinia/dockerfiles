@@ -37,7 +37,7 @@ ENV MC_IMAGE=YES
 
 ENV UID=1000
 ENV MOTD A Minecraft Server Powered by Docker
-ENV JVM_OPTS -Xmx1024M -Xms1024M
+ENV JVM_OPTS -Xmx1024M -Xms1024M \
   -XX:+UnlockCommercialFeatures \
   -XX:+FlightRecorder \
   -XX:StartFlightRecording=defaultrecording=true \
