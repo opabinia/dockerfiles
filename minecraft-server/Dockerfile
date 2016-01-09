@@ -27,7 +27,7 @@ VOLUME ["/mods"]
 VOLUME ["/config"]
 VOLUME ["/plugins"]
 COPY server.properties /tmp/server.properties
-COPY profile-minecraft.jfc /usr/lib/jvm/java-8-oracle/lib/jfr/profile-minecraft.jfc
+COPY profile-minecraft.jfc /usr/lib/jvm/java-8-oracle/jre/lib/jfr/profile-minecraft.jfc
 WORKDIR /data
 
 CMD [ "/start" ]
@@ -37,6 +37,7 @@ ENV MC_IMAGE=YES
 
 ENV UID=1000
 ENV MOTD A Minecraft Server Powered by Docker
+ENV JDK_HOME /usr/lib/jvm/java-8-oracle/jre/
 ENV JVM_OPTS -Xmx1024M -Xms1024M \
   -XX:+UnlockCommercialFeatures \
   -XX:+FlightRecorder \
