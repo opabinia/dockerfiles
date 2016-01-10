@@ -27,7 +27,7 @@ VOLUME ["/mods"]
 VOLUME ["/config"]
 VOLUME ["/plugins"]
 COPY server.properties /tmp/server.properties
-COPY profile-minecraft.jfc /usr/lib/jvm/java-8-oracle/jre/lib/jfr/profile-minecraft.jfc
+COPY profile-minecraft.jfc /tmp/profile-minecraft.jfc
 WORKDIR /data
 
 CMD [ "/start" ]
@@ -38,10 +38,10 @@ ENV MC_IMAGE=YES
 ENV UID=1000
 ENV MOTD A Minecraft Server Powered by Docker
 ENV JDK_HOME /usr/lib/jvm/java-8-oracle/jre/
-ENV JVM_OPTS -Xmx1024M -Xms1024M \
+ENV JVM_OPTS -server -Xms1024M -Xmx1024M \
   -XX:+UnlockCommercialFeatures \
   -XX:+FlightRecorder \
   -XX:StartFlightRecording=defaultrecording=true \
-  -XX:FlightRecorderOptions=disk=true,maxage=60m,dumponexit=true,dumponexitpath=/data/prof.jfr,settings=profile-minecraft.jfc
+  -XX:FlightRecorderOptions=disk=true,maxsize=50M,dumponexit=true,dumponexitpath=/data/prof.jfr,settings=/tmp/profile-minecraft.jfc
 ENV TYPE=VANILLA VERSION=LATEST FORGEVERSION=RECOMMENDED LEVEL=world PVP=true DIFFICULTY=easy \
   LEVEL_TYPE=DEFAULT GENERATOR_SETTINGS= WORLD= MODPACK=
