@@ -37,7 +37,6 @@ ENV MC_IMAGE=YES
 
 ENV UID=1000
 ENV MOTD A Minecraft Server Powered by Docker
-ENV JDK_HOME /usr/lib/jvm/java-8-oracle/jre/
 ENV JVM_OPTS -server -Xms1024M -Xmx1024M \
   -XX:+UnlockCommercialFeatures \
   -XX:+FlightRecorder \
